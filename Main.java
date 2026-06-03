@@ -29,6 +29,16 @@ public class Main {
     private static final String ID_RANGE_ERROR_MESSAGE = "Id должен быть числом от 1 до 10000. Попробуйте ещё раз";
     private static final String EMPTY_LIST_MESSAGE = "Список кораблей пуст.";
 
+        public Main() {
+            this(new ArrayList<Ship>()); 
+    }
+
+    public Main(ArrayList<Ship> initialShips) {
+        if (initialShips != null) {
+            ships.addAll(initialShips);
+        }
+    }
+
     private static Scanner createScanner() {
         try {
             if (System.console() != null) {
